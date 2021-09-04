@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>React |React Assignment</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+
+    function handleClick(obj) {
+      // console.log(obj.nextElementSibling.classList[0] == "answer-hide");
+      let answer = obj.nextElementSibling;
+      let icon = obj.lastElementChild.lastElementChild;
+      // console.log(icon);
+      if (answer.classList[0] == "answer-show") {
+        answer.classList.remove("answer-show");
+        answer.classList.add("answer-hide");
+
+        icon.classList.remove("rotated-icon");
+        icon.classList.add("icon");
+
+
+        obj.style.fontWeight = 400;
+
+
+      } else {
+        icon.classList.remove("icon");
+        icon.classList.add("rotated-icon");
+
+        answer.classList.remove("answer-hide");
+        answer.classList.add("answer-show");
+        obj.style.fontWeight = 700;
+      }
+
+      while (answer.parentElement.nextElementSibling != null) {
+        answer = answer.parentElement.nextElementSibling.firstElementChild.nextElementSibling;
+        icon = answer.previousElementSibling.lastElementChild.lastElementChild;
+        // console.log(icon)
+        // if (answer==null) break;
+        answer.classList.remove("answer-show");
+        answer.classList.add("answer-hide");
+
+        icon.classList.remove("rotated-icon");
+        icon.classList.add("icon");
+
+        // console.log(answer.parentElement);
+        answer.previousElementSibling.style.fontWeight = 400;
+
+      }
+
+      answer = obj.nextElementSibling;
+
+      while (answer.parentElement.previousElementSibling != null && answer.parentElement.previousElementSibling.classList[0] != 'faq') {
+        answer = answer.parentElement.previousElementSibling.firstElementChild.nextElementSibling;
+
+        icon = answer.previousElementSibling.lastElementChild.lastElementChild;
+        // console.log(icon)
+        // if (answer==null) break;
+        answer.classList.remove("answer-show");
+        answer.classList.add("answer-hide");
+
+        icon.classList.remove("rotated-icon");
+        icon.classList.add("icon");
+
+        // console.log(answer.parentElement);
+        answer.previousElementSibling.style.fontWeight = 400;
+
+      }
+
+
+
+
+
+    }
+
+  </script>
+</head>
+
+<body>
+  <div class="box-wraper">
+
+    <img src="images/illustration-box-desktop.svg" alt="box" class="box">
+  </div>
+  <div class="container">
+    <section class="img-wraper">
+      <img src="images/illustration-woman-online-desktop.svg" alt="woman" class="woman">
+      <img src="images/bg-pattern-desktop.svg" alt="pattern" class="pattern">
+
+    </section>
+    <section class="question-wraper">
+
+      <strong class="faq">React</strong>
+
+      <!-- question structure start -->
+      <div>
+        <div onclick="handleClick(this)">
+          <div class="question">What is react ?
+            <img src="images/icon-arrow-down.svg" alt="icon" class="icon">
+          </div>
+        </div>
+        <p class="answer-hide">
+          Answer : React is a free open source JavaScript library created by Facebook. React is mostely used in development of single page or mobile applications
+        </p>
+        <div class="line"></div>
+
+      </div>
+      <!-- question structure end -->
+
+      <!-- question structure start -->
+      <div>
+        <div onclick="handleClick(this)">
+          <div class="question">spa vs mpa
+            <img src="images/icon-arrow-down.svg" alt="icon" class="icon">
+          </div>
+        </div>
+        <p class="answer-hide">
+          <strong>SPA</strong>  : stands for single page application . SP Applications are faster because The page doesn’t reload entirely whenever the user requests a new piece of data. SPA frontend and backend are sperate .SPA s falls behind in SCO optimization compaired to MPAs
+ <br><strong>MPA</strong>: stands for multipage application nar emore staple applications but they are slower then SP Applications because it must reload the page from scratch when ever u want to go to another page or get new data MPA’s, front-end and back-end are more interdependent. All coding is usually under one project.MPA s gets higher ranking on google seo
+        </p>
+        <div class="line"></div>
+
+      </div>
+      <!-- question structure end -->
+      
+      <!-- question structure start -->
+      <div>
+        <div onclick="handleClick(this)">
+          <div class="question">React vs Angular
+            <img src="images/icon-arrow-down.svg" alt="icon" class="icon">
+          </div>
+        </div>
+        <p class="answer-hide">
+          <strong>angular</strong> is a complete framework for development of dynamic and complete web apps with backend where as <strong>react</strong> is a javascript library use to build ui designs for a complete webb ap or any other app development in react we have to attack back-end to it angular is based on modal view controller where as react is is based on virtual dom. react is baised on javascript and angular is baised on typescript
+        </p>
+        <div class="line"></div>
+
+      </div>
+      <!-- question structure end -->
+
+      <!-- question structure start -->
+      <div>
+        <div onclick="handleClick(this)">
+          <div class="question">library vs Framework
+            <img src="images/icon-arrow-down.svg" alt="icon" class="icon">
+          </div>
+        </div>
+        <p class="answer-hide">
+          library vs Framework are reusable pre written code by someone else that is used to solve common problems if u are using an library u are incharege u can call any it any time and use it as u see fit . <br>
+if ur are using a framework , framwork is incharge and u have to follow through every rule and path pre defined in it u can build a complete application in a framework with backend . if u are using libraries u have to use multiple of them to build a complete application
+        </p>
+        <div class="line"></div>
+
+      </div>
+      <!-- question structure end -->
+
+      <!-- question structure start -->
+      <div>
+        <div onclick="handleClick(this)">
+          <div class="question">Dom vs Virtual dom
+            <img src="images/icon-arrow-down.svg" alt="icon" class="icon">
+          </div>
+        </div>
+        <p class="answer-hide">
+          <strong>DOM</strong> is a standard object model and programming interface for HTML it contains all the properties methods andevents of html elements. HTML DOM is a standard for how to get, change, add, or delete HTML elements.if u make achange in ur html u have to refresh ur page to see the change. <br> <strong>The virtual DOM (VDOM)</strong> is a programming concept where an ideal or virtual representation of a UI is kept in memory and synced with the real DOM. it only changes the component which is changed or altered without reloading or refreshing whole application
+        </p>
+        <div class="line"></div>
+
+      </div>
+      <!-- question structure end -->
+
+      <!-- question structure start -->
+      <div>
+        <div onclick="handleClick(this)">
+          <div class="question">Oneway Data Binding vs Two way
+            <img src="images/icon-arrow-down.svg" alt="icon" class="icon">
+          </div>
+        </div>
+        <p class="answer-hide">
+          <strong>One-way data binding</strong><br>
+One-way data-binding means the data flows in a single direction so that whenever the data changes in a component, it also updates the view with new data.
+<br>
+<strong>Two-way data binding</strong><br>
+Two-way data binding means data flows in both directions, it means any change happens in the view updates the data and any change happens in the data updates the view.
+
+        </p>
+        <div class="line"></div>
+
+      </div>
+      <!-- question structure end -->
+
+    </section>
+
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://github.com/ghousahmed" target="_blank">Sir Ghous</a>.
+    Coded by <a href="https://github.com/omerfarooqBM">Omer</a>.
+  </div>
+</body>
+
+</html>
